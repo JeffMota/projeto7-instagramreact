@@ -1,5 +1,5 @@
 import PostsContainer from "./PostsContainer"
-import StoriesContainer from "./stories-container"
+import StoriesContainer from "./StoriesContainer"
 
 export default function MainColumn() {
     return (
