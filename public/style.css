@@ -1,0 +1,339 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fafafa;
+  font-family: "Roboto", sans-serif;
+}
+/*------------------------NavBar--------------------------*/
+.NavBar {
+  display: flex;
+  height: 54px;
+  width: 100%;
+  padding: 0 15%;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  border-bottom: 1px solid #dbdbdb;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+/*--------------------------Logo----------------------*/
+.logo {
+  display: flex;
+  align-items: flex-start;
+}
+
+.logo div {
+  display: flex;
+  height: 22px;
+  width: 1px;
+  margin: 0 10px;
+  background-color: #dbdbdb;
+}
+
+ion-icon {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.direct {
+  display: none;
+}
+
+/*------------------------Search bar------------------------*/
+header input {
+  width: 215px;
+  height: 28px;
+
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  padding: 0 15px;
+
+  outline: none;
+}
+
+header input::placeholder {
+  color: #979797;
+  text-align: center;
+}
+
+/*----------------------------Icones menu-----------------------*/
+.icons {
+  display: flex;
+  width: 200px;
+  justify-content: space-around;
+}
+
+/*----------------------Conteudo principal------------------*/
+
+.main {
+  display: flex;
+  margin: auto;
+  padding-top: 80px;
+
+  width: 70%;
+}
+
+.main a {
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+}
+
+.coluna {
+  display: flex;
+  width: 65%;
+  flex-direction: column;
+}
+
+/*----------------------------Stories------------------------*/
+.stories_container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: 118px;
+
+  overflow-y: scroll;
+  position: relative;
+
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+
+  background-color: #ffffff;
+}
+.stories_container::-webkit-scrollbar {
+  display: none;
+}
+
+.stories_container ion-icon {
+  color: #ffffff;
+  position: absolute;
+  right: 10px;
+
+  background-image: linear-gradient(
+    to bottom left,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0.5)
+  );
+
+  border-radius: 50%;
+}
+
+.stories_box {
+  display: flex;
+  flex-direction: column;
+  width: 66px;
+  height: 75%;
+  margin-left: 18px;
+
+  font-size: 12px;
+  justify-content: space-between;
+  color: #262626;
+
+  text-align: center;
+}
+
+.stories {
+  display: flex;
+  height: 66.5px;
+  width: 66px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+
+  background-image: linear-gradient(
+    to top right,
+    rgb(255, 240, 30),
+    rgb(238, 107, 19),
+    rgb(224, 68, 185),
+    rgb(189, 0, 142)
+  );
+}
+
+.stories img {
+  border: 1.7px solid #ffffff;
+  border-radius: 50%;
+  width: 92%;
+  height: 92%;
+}
+
+/*Posts*/
+.post {
+  width: 100%;
+
+  border: 1px solid #dbdbdb;
+  background-color: #ffffff;
+  border-radius: 3px;
+
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+}
+.perfil {
+  display: flex;
+  align-items: center;
+  width: 100px;
+
+  justify-content: space-between;
+  font-size: 14px;
+}
+.perfil img {
+  width: 32px;
+}
+.img_post {
+  width: 100%;
+}
+
+/*---------------------Footer do post--------------------*/
+.footer {
+  width: 100%;
+}
+.icons_post {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  padding: 10px 15px;
+}
+.interact {
+  display: flex;
+  width: 100px;
+  justify-content: space-between;
+}
+.curtidas {
+  display: flex;
+  align-items: center;
+
+  padding: 0px 15px;
+}
+.curtidas img {
+  width: 20px;
+  margin-right: 10px;
+}
+.comentarios {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 15px;
+}
+.comentarios p {
+  max-width: 90%;
+}
+.ver_coments {
+  cursor: pointer;
+  color: rgb(173, 173, 173);
+  margin: 10px 15px;
+}
+.comentar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  border-top: 1px solid #dbdbdb;
+  padding-left: 15px;
+}
+.comentar section {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.comentar input {
+  padding: 0 15px;
+  border: none;
+  outline: none;
+  height: 100%;
+  width: 100%;
+}
+
+.comentar input::placeholder {
+  color: rgb(173, 173, 173);
+}
+.comentar button {
+  background-color: #ffffff;
+  border: none;
+  width: 100px;
+  height: 100%;
+  color: #b2dffc;
+}
+.comentar button:hover {
+  cursor: pointer;
+  color: #0095f6;
+  transition: 300ms;
+}
+
+/*--------------------------Sidebar----------------------*/
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  width: clamp(250px, 26vw, 23vw);
+
+  position: fixed;
+  left: 62%;
+  top: 115px;
+}
+
+.nome {
+  display: flex;
+  align-items: center;
+
+  margin-bottom: 20px;
+}
+.nome img {
+  margin-right: 10px;
+}
+.nome p {
+  color: rgb(173, 173, 173);
+}
+.sugestoes {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #8e8e8e;
+}
+
+.card_sugestoes {
+  display: flex;
+  margin-top: 15px;
+
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card_sugestoes p {
+  cursor: pointer;
+  color: #0095f6;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.card_perfil {
+  display: flex;
+}
+
+.card_perfil div {
+  line-height: 18px;
+  margin-left: 10px;
+}
+
+.sobre {
+  font-size: 11px;
+  color:#C7C7C7;
+  margin-top: 30px;
+}
