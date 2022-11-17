@@ -1,8 +1,10 @@
+import NavBar from "./Components/NavBar"
 import Corpo from "./Components/Corpo"
 
 export default function App() {
     return (
-        <div className="App">
+        <div>
+            <NavBar />
             <Corpo />
         </div>
     )

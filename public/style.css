@@ -44,12 +44,12 @@ ion-icon {
   cursor: pointer;
 }
 
-.direct {
+.logo .direct {
   display: none;
 }
 
 /*------------------------Search bar------------------------*/
-header input {
+.NavBar input {
   width: 215px;
   height: 28px;
 
@@ -60,7 +60,7 @@ header input {
   outline: none;
 }
 
-header input::placeholder {
+.NavBar input::placeholder {
   color: #979797;
   text-align: center;
 }

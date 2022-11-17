@@ -1,0 +1,61 @@
+@media (max-width: 935px) {
+    .sidebar {
+        display: none;
+    }
+
+    .NavBar {
+        padding: 0 2%;
+    }
+
+    .coluna {
+        width: 100%;
+    }
+}
+
+/*--------------------------614px---------------------------*/
+@media (max-width: 614px) {
+    body::-webkit-scrollbar {
+        display: none;
+    }
+
+    .NavBar input {
+        display: none;
+    }
+
+    .NavBar .icons {
+        display: none;
+    }
+
+    .NavBar .direct {
+        display: block;
+    }
+
+    .NavBar .logo {
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .NavBar .logo div {
+        display: none;
+    }
+
+    .stories_container {
+        border: none;
+        background-color: rgba(0, 0, 0, 0);
+    }
+
+    .stories_container ion-icon {
+        display: none;
+    }
+
+    .main {
+        width: 100%;
+        padding-top: 55px;
+    }
+
+    .post {
+        margin-top: 10px;
+        border-left: none;
+    }
+}
