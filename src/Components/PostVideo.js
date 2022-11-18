@@ -5,6 +5,8 @@ export default function PostVideo(props) {
     const [bookmarkFill, setBookmark] = useState('-outline')
     const [heartFill, setHeart] = useState('-outline')
     const [classFill, setClass] = useState('')
+    const [state, setState] = useState('hidden')
+    const [animate, setAnimate] = useState('')
 
     function fillBookMark() {
         if (bookmarkFill == '-outline') {
@@ -20,16 +22,19 @@ export default function PostVideo(props) {
         }
         else {
             setHeart('-outline')
-            setClass('') 
-            props.curtiu.quant -= 1 
+            setClass('')
+            props.curtiu.quant -= 1
         }
     }
-    function fillHeartImg(){
+    function fillHeartImg() {
         if (heartFill == '-outline') {
             setHeart('')
             setClass('filled')
             props.curtiu.quant += 1
         }
+        setState('')
+        setAnimate('animate')
+        setTimeout(() => { setState('hidden') }, 500)
     }
 
     return (
@@ -41,13 +46,16 @@ export default function PostVideo(props) {
                 </div>
                 <ion-icon name="ellipsis-horizontal"></ion-icon>
             </div>
-            <video data-test="post-image" onDoubleClick={fillHeartImg} className="img_post" autoplay loop muted>
-                <source src={`assets/${props.post}.mp4`} type="video/mp4" />
-                <source src={`assets/${props.post}.ogv`} type="video/ogv" />
-                Your browser does not support the video tag.
-            </video>
+            <div className="box-img">
+                <video data-test="post-image" onDoubleClick={fillHeartImg} className="img_post" autoplay loop muted>
+                    <source src={`assets/${props.post}.mp4`} type="video/mp4" />
+                    <source src={`assets/${props.post}.ogv`} type="video/ogv" />
+                    Your browser does not support the video tag.
+                </video>
+                <div className={`animatedHeart ${state} ${animate}`} ><ion-icon name={`heart`}></ion-icon></div>
+            </div>
             <div className="footer">
-            <section className="icons_post">
+                <section className="icons_post">
                     <span className="interact">
                         <span className={classFill}> <ion-icon data-test="like-post" onClick={fillHeart} name={`heart${heartFill}`}></ion-icon></span>
                         <ion-icon name="chatbubble-outline"></ion-icon>
@@ -79,6 +87,6 @@ export default function PostVideo(props) {
                     <button>Publicar</button>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }

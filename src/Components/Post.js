@@ -9,6 +9,8 @@ export default function Post(props) {
     const [bookmarkFill, setBookmark] = useState('-outline')
     const [heartFill, setHeart] = useState('-outline')
     const [classFill, setClass] = useState('')
+    const [state, setState] = useState('hidden')
+    const [animate, setAnimate] = useState('')
 
     function fillBookMark() {
         if (bookmarkFill == '-outline') {
@@ -24,16 +26,19 @@ export default function Post(props) {
         }
         else {
             setHeart('-outline')
-            setClass('') 
-            props.curtiu.quant -= 1 
+            setClass('')
+            props.curtiu.quant -= 1
         }
     }
-    function fillHeartImg(){
+    function fillHeartImg() {
         if (heartFill == '-outline') {
             setHeart('')
             setClass('filled')
             props.curtiu.quant += 1
         }
+        setState('')
+        setAnimate('animate')
+        setTimeout(() => { setState('hidden') }, 500)
     }
 
     return (
@@ -45,7 +50,10 @@ export default function Post(props) {
                 </div>
                 <ion-icon name="ellipsis-horizontal"></ion-icon>
             </div>
-            <img data-test="post-image" onDoubleClick={fillHeartImg} className="img_post" src={caminho} />
+            <div className="box-img">
+                <img data-test="post-image" onDoubleClick={fillHeartImg} className="img_post" src={caminho} />
+                <div className={`animatedHeart ${state} ${animate}`} ><ion-icon name={`heart`}></ion-icon></div>
+            </div>
             <div className="footer">
                 <section className="icons_post">
                     <span className="interact">

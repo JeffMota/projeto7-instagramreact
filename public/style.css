@@ -196,10 +196,47 @@ ion-icon {
 .perfil img {
   width: 32px;
 }
+
+.box-img{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
 .img_post {
   width: 100%;
 }
 
+.animatedHeart{
+  width: 150px;
+  height: 150px;
+  position: absolute;
+}
+
+.animatedHeart ion-icon {
+  color: white;
+  font-size: 9em;
+}
+
+@keyframes anime {
+  0%{
+    scale: 0.2;
+  }
+  100%{
+    scale: 1;
+
+  }
+  
+}
+
+.animate{
+  animation: anime 0.3s linear;
+}
+
+.hidden{
+  display: none;
+}
 /*---------------------Footer do post--------------------*/
 .footer {
   width: 100%;
