@@ -226,6 +226,9 @@ ion-icon {
   width: 20px;
   margin-right: 10px;
 }
+.interact .filled ion-icon{
+  color: rgb(255, 27, 57);
+}
 .comentarios {
   display: flex;
   justify-content: space-between;

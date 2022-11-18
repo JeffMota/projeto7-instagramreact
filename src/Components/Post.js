@@ -7,12 +7,33 @@ export default function Post(props) {
     }
 
     const [bookmarkFill, setBookmark] = useState('-outline')
+    const [heartFill, setHeart] = useState('-outline')
+    const [classFill, setClass] = useState('')
 
-    function fill() {
+    function fillBookMark() {
         if (bookmarkFill == '-outline') {
             setBookmark('')
         }
         else setBookmark('-outline')
+    }
+    function fillHeart() {
+        if (heartFill == '-outline') {
+            setHeart('')
+            setClass('filled')
+            props.curtiu.quant += 1
+        }
+        else {
+            setHeart('-outline')
+            setClass('') 
+            props.curtiu.quant -= 1 
+        }
+    }
+    function fillHeartImg(){
+        if (heartFill == '-outline') {
+            setHeart('')
+            setClass('filled')
+            props.curtiu.quant += 1
+        }
     }
 
     return (
@@ -24,23 +45,23 @@ export default function Post(props) {
                 </div>
                 <ion-icon name="ellipsis-horizontal"></ion-icon>
             </div>
-            <img className="img_post" src={caminho} />
+            <img data-test="post-image" onDoubleClick={fillHeartImg} className="img_post" src={caminho} />
             <div className="footer">
                 <section className="icons_post">
                     <span className="interact">
-                        <ion-icon name="heart-outline"></ion-icon>
+                        <span className={classFill}> <ion-icon data-test="like-post" onClick={fillHeart} name={`heart${heartFill}`}></ion-icon></span>
                         <ion-icon name="chatbubble-outline"></ion-icon>
                         <ion-icon name="paper-plane-outline"></ion-icon>
                     </span>
                     <span>
-                        <ion-icon onClick={fill} name={`bookmark${bookmarkFill}`}></ion-icon>
+                        <ion-icon data-test="save-post" onClick={fillBookMark} name={`bookmark${bookmarkFill}`}></ion-icon>
                     </span>
                 </section>
                 <section className="curtidas">
                     <img src={`assets/${props.curtiu.nome} 1.svg`} />
                     <p>
                         Curtido por <a href="#">{props.curtiu.nome}</a> e
-                        <a href="#"> outras {props.curtiu.quant} pessoas</a>
+                        <a href="#"> outras <span data-test="likes-number" >{props.curtiu.quant}</span> pessoas</a>
                     </p>
                 </section>
                 <section className="comentarios">
