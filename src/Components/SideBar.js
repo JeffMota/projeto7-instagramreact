@@ -1,4 +1,5 @@
 import Sugestoes from "./Sugestoes";
+import { useState } from "react";
 
 
 export default function SideBar() {
@@ -13,16 +14,27 @@ export default function SideBar() {
 }
 
 function User() {
+    const [name, setName] = useState('Catana');
+    const [usrImg, setUrlImg] = useState("assets/catanacomics 1.png");
+
+    function changeName(){
+        setName(prompt('Insira seu nome:'))
+    }
+    function changeImg(){
+        setUrlImg(prompt('Insira o URL da imagem:'))
+    }
+
     return (
         <div className="nome">
-            <img src="assets/catanacomics 1.png" alt="" />
+            <img onClick={changeImg} src={usrImg} alt="" />
             <div>
                 <a href="#">catanacomics</a>
-                <p>Catana</p>
+                <p>{name} <ion-icon onClick={changeName} name="pencil-outline"></ion-icon></p>
             </div>
         </div>
     )
 }
+
 
 function Sobre() {
     return (

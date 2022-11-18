@@ -1,8 +1,18 @@
+import { useState } from "react"
+
 export default function Post(props) {
     let caminho = `assets/${props.post}`
-    alert(props.post.slice(0, 5))
-    if(props.post.slice(0, 5) === 'https'){
+    if (props.post.slice(0, 5) === 'https') {
         caminho = props.post
+    }
+
+    const [bookmarkFill, setBookmark] = useState('-outline')
+
+    function fill() {
+        if (bookmarkFill == '-outline') {
+            setBookmark('')
+        }
+        else setBookmark('-outline')
     }
 
     return (
@@ -23,7 +33,7 @@ export default function Post(props) {
                         <ion-icon name="paper-plane-outline"></ion-icon>
                     </span>
                     <span>
-                        <ion-icon name="bookmark-outline"></ion-icon>
+                        <ion-icon onClick={fill} name={`bookmark${bookmarkFill}`}></ion-icon>
                     </span>
                 </section>
                 <section className="curtidas">
@@ -35,8 +45,7 @@ export default function Post(props) {
                 </section>
                 <section className="comentarios">
                     <p>
-                        <a href="#">respondeai</a> Lorem ipsum dolor sit amet
-                        consectetur adipisicing elit.
+                        <a href="#">{props.coment.nome}</a> {props.coment.text}
                     </p>
                     <ion-icon name="heart-outline"></ion-icon>
                 </section>

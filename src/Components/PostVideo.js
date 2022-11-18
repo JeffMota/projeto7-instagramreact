@@ -10,7 +10,7 @@ export default function PostVideo(props) {
             </div>
             <video className="img_post" autoplay loop muted>
                 <source src={`assets/${props.post}.mp4`} type="video/mp4" />
-                <source src={`assets/${props.post}.ogv`} type="video/ogg" />
+                <source src={`assets/${props.post}.ogv`} type="video/ogv" />
                 Your browser does not support the video tag.
             </video>
             <div className="footer">
@@ -25,16 +25,15 @@ export default function PostVideo(props) {
                     </span>
                 </section>
                 <section className="curtidas">
-                    <img src="./img/stories/respondeai 1.svg" />
+                    <img src={`assets/${props.curtiu.nome} 1.svg`} />
                     <p>
-                        Curtido por <a href="#">respondeai</a> e
-                        <a href="#">outras 101.523 pessoas</a>
+                        Curtido por <a href="#">{props.curtiu.nome}</a> e
+                        <a href="#"> outras {props.curtiu.quant} pessoas</a>
                     </p>
                 </section>
                 <section className="comentarios">
                     <p>
-                        <a href="#">respondeai</a> Lorem ipsum dolor sit, amet
-                        consectetur adipisicing elit. Eos, suscipit dolorem!
+                        <a href="#">{props.coment.nome}</a> {props.coment.text}
                     </p>
                     <ion-icon name="heart-outline"></ion-icon>
                 </section>

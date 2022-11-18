@@ -26,7 +26,7 @@ export default function PostsContainer() {
         },
         {
             tipo: 'img',
-            nome: 'barked',
+            nome: 'meowed',
             post: 'https://img.freepik.com/fotos-gratis/o-gato-vermelho-ou-branco-eu-no-estudio-branco_155003-13189.jpg?w=2000',
             curtiu: { nome: '9gag', quant: 20 },
             coment: { nome: '9gag', text: 'É isso, vou vender meu carro' }

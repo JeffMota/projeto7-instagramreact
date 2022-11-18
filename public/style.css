@@ -297,9 +297,18 @@ ion-icon {
 }
 .nome img {
   margin-right: 10px;
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50px;
+  cursor: pointer;
 }
 .nome p {
   color: rgb(173, 173, 173);
+}
+.nome ion-icon{
+  font-size: 17px;
 }
 .sugestoes {
   display: flex;
