@@ -37,7 +37,7 @@ export default function Post(props) {
     }
 
     return (
-        <div className="post">
+        <div data-test="post" className="post">
             <div className="head">
                 <div className="perfil">
                     <img src={`assets/${props.nome} 1.svg`} alt="" />

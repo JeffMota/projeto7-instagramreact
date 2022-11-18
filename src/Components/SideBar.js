@@ -18,10 +18,23 @@ function User() {
     const [usrImg, setUrlImg] = useState("assets/catanacomics 1.png");
 
     function changeName(){
-        setName(prompt('Insira seu nome:'))
+        let aux = ''
+        while(aux == ''){
+            aux = prompt('Insira seu nome:')
+        }
+        if(aux != ''){
+            setName(aux)
+        }else setName('Catana')
+        
     }
     function changeImg(){
-        setUrlImg(prompt('Insira o URL da imagem:'))
+        let aux = ''
+        while(aux == ''){
+            aux = prompt('Insira o URL da imagem:')
+        }
+        if(aux){
+            setUrlImg(aux)
+        }else setUrlImg("assets/catanacomics 1.png")
     }
 
     return (
